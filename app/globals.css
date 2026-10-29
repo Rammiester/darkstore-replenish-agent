@@ -1,0 +1,155 @@
+:root {
+  --bg: #0b0d12;
+  --panel: #151822;
+  --border: #272c3a;
+  --text: #e8eaf0;
+  --muted: #8b90a3;
+  --accent: #5b8def;
+  --good: #3ecf8e;
+  --warn: #f2b84b;
+  --bad: #ef6a6a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+.hgroup h1 {
+  font-size: 1.6rem;
+  margin: 0 0 4px;
+}
+
+.hgroup p {
+  color: var(--muted);
+  margin: 0 0 24px;
+  max-width: 640px;
+  line-height: 1.5;
+}
+
+nav.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+nav.tabs a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+nav.tabs a.active {
+  color: var(--text);
+  border-color: var(--accent);
+  background: rgba(91, 141, 239, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+tr:last-child td { border-bottom: none; }
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge.adjusted { background: rgba(242, 184, 75, 0.15); color: var(--warn); }
+.badge.unadjusted { background: rgba(62, 207, 142, 0.15); color: var(--good); }
+
+button.recommend-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+button.recommend-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.rationale {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  max-width: 320px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.metric-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.metric {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  flex: 1;
+}
+
+.metric .label {
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.metric .value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.metric .value.good { color: var(--good); }
+.metric .value.bad { color: var(--bad); }
